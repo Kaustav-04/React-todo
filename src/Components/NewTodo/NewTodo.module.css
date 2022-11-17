@@ -1,0 +1,26 @@
+.addTodoSection{
+    margin: auto;
+    width:350px;
+    display: flex;
+    align-items: center;
+}
+.newTodoTxt{
+    width:300px;
+    height: 30px;
+    font-size: 20px;
+    border-radius: 5px;
+    padding: 3px;
+    margin-right: 10px;
+}
+.addNewTodoBtn{
+    height: 35px;
+    width: 35px;
+    border: none;
+    border-radius: 9px;
+    background-color: rgba(123, 42, 199, 0.845);
+    color: white;
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

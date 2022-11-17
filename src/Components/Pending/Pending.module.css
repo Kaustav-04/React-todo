@@ -1,0 +1,39 @@
+.task{
+    background-color: rgba(211, 211, 211, 0.557);
+    height: 40px;
+    font-size: 20px;
+    border-radius: 5px;
+    margin: 10px 0px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px;
+    width: 100%;
+    overflow: hidden;
+}
+.taskDescription{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.editInput{
+    margin-right: 10px;
+}
+.taskControls{
+    transform: translateX(110%);
+}
+.task:hover .taskControls{
+    transform: translateX(0%);
+    transition: 0.5s;
+}
+.taskControls button, .taskDescription button, #clearAll{
+    padding: 2px;
+    font-size: 1.1rem;
+    border-radius: 5px;
+    background-color: rgba(184, 127, 237, 0.516);
+    width:30px;
+    height:30px;
+}
+.taskDescription button{
+    width:50px;
+}
