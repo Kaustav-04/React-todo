@@ -20,6 +20,10 @@ function App() {
   }
   const clearAllHandler = () => {
     dispatch(taskActions.clearAll())
+    set(ref(database, '/tasks/'), {
+      PendingTasks: pendingTasks,
+      CompletedTasks: completedTask
+    });
   }
 
   useEffect(() => {
@@ -33,13 +37,6 @@ function App() {
       console.error(error);
     });
   }, [dispatch])
-
-  useEffect(() => {
-    set(ref(database, '/tasks/'), {
-      PendingTasks: pendingTasks,
-      CompletedTasks: completedTask
-    });
-  }, [pendingTasks,completedTask])
 
   return (
     <main>
@@ -61,7 +58,7 @@ function App() {
         </div>
         <div className='todoCount'>
           <div className='counttxt'>{isPending ? `There are ${pendingTasks.length} tasks pending!` : `${completedTask.length} tasks are completed out of ${completedTask.length + pendingTasks.length}`}</div>
-          <button className='clearAll' style={{ "display": "block" }} onClick={clearAllHandler}>Clear All</button>
+          {!isPending && <button className='clearAll' style={{ "display": "block" }} onClick={clearAllHandler}>Clear All</button>}
         </div>
       </Layout>
     </main>

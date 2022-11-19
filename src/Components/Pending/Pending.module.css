@@ -12,12 +12,16 @@
     overflow: hidden;
 }
 .taskDescription{
-    display: flex;
-    justify-content: space-between;
+    display: flex;;
     align-items: center;
+    width:100%;
 }
 .editInput{
     margin-right: 10px;
+    width: 100%;
+    font-size: 19px;
+    border-radius: 3px;
+    padding: 2px;
 }
 .taskControls{
     transform: translateX(110%);
