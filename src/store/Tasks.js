@@ -6,6 +6,10 @@ export const taskSlice = createSlice({
     name: 'tasks',
     initialState: taskInitialState,
     reducers: {
+        setInitialTask(state,action){
+            state.pendingTask = action.payload.PendingTasks ? action.payload.PendingTasks : [];
+            state.completedTask = action.payload.CompletedTasks ? action.payload.CompletedTasks : [];
+        },
         addTask(state,action){
             state.pendingTask.push(action.payload)
         },

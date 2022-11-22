@@ -5,7 +5,7 @@ import { useSelector } from 'react-redux';
 
 export default function Pending() {
   const pendingTasks = useSelector(state => state.task.pendingTask)
-  if (pendingTasks.length === 0) {
+  if (pendingTasks.length === 0 || !pendingTasks) {
     return (
       <Fragment>
         <div id="nullPending">No pending tasks left!</div>

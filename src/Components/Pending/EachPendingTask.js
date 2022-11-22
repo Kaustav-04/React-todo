@@ -42,7 +42,7 @@ export default function EachPendingTask(props) {
         <div className={classes.task}>
             <div className={classes.taskDescription}>{!edit && <div className={classes.taskText}>{props.text}</div>}{edit && <input type="text" className={classes.editInput} value={edittedTask} ref={inputRef} onChange={() => setEdittedTask(inputRef.current.value)} />}{edit && <button className={classes.saveEdit} onClick={closeEdit}>Save</button>}</div>
             {!edit && <div className={classes.taskControls}>
-                <button className={classes.edit} onClick={completeHandler} style={{ color: done ? 'green' : 'red' }}><CheckOutlinedIcon /></button>
+                <button className={classes.edit} onClick={completeHandler} style={{ color: done ? 'green' : 'red', marginRight: '5px' }}><CheckOutlinedIcon /></button>
                 <button className={classes.complete} onClick={enableEdit}><EditOutlinedIcon /></button>
             </div>}
         </div>)

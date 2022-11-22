@@ -4,7 +4,7 @@ import { useSelector } from 'react-redux';
 
 export default function Completed() {
   const completedTask = useSelector(state => state.task.completedTask);
-  if (completedTask.length === 0) {
+  if (completedTask.length === 0 || !completedTask) {
     return (
       <Fragment>
         <div id="nullCompleted">All tasks are pending</div>

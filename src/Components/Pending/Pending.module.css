@@ -25,6 +25,7 @@
 }
 .taskControls{
     transform: translateX(110%);
+    display: flex;
 }
 .task:hover .taskControls{
     transform: translateX(0%);

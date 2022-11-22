@@ -6,7 +6,7 @@ import Layout from './Components/UI/Layout';
 import { useSelector } from 'react-redux';
 import { useDispatch } from 'react-redux';
 import { pendingActions, taskActions } from './store'
-import { ref, set, child, get} from "firebase/database";
+import { ref, set, child, get } from "firebase/database";
 import { useEffect } from 'react';
 import { database } from './firebase';
 
@@ -27,16 +27,18 @@ function App() {
   }
 
   useEffect(() => {
-    get(child(ref(database), `/tasks`)).then((snapshot) => {
-      if (snapshot.exists()) {
-        console.log(snapshot.val())
-      } else {
-        console.log("No data available");
-      }
-    }).catch((error) => {
-      console.error(error);
-    });
-  }, [dispatch])
+    const fetchData = async () => {
+      const Response = await fetch('https://todo-872f6-default-rtdb.asia-southeast1.firebasedatabase.app/tasks.json');
+
+      const data = await Response.json();
+
+      dispatch(taskActions.setInitialTask({
+        ...data
+      }))
+    }
+
+    fetchData();
+  }, [])
 
   return (
     <main>
